@@ -9,7 +9,18 @@ var search = document.querySelector("#search")
 var requestUrl = "https:api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=5&appid=" + key;
 var coorUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=" + key
 var dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+var currentMonth = new Date().getMonth()+1
 search.value = "Denver"
+if(retreiveFromLocal !== null){
+for(i=0; i<retreiveFromLocal.length; i++){
+  savingCity = document.createElement("li")
+    savingCity.innerHTML = retreiveFromLocal[i]
+    savingCity.classList.add("savedCity")
+    savingCity.addEventListener("click", previousCity)
+    localSaveCities.push(search.value)
+    savedCities.appendChild(savingCity)
+}}
+
 function test3(){
 fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=" + key)
   .then(function (response) {
@@ -20,14 +31,12 @@ fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit
     return response.json();
   })
   .then(function (data) {
-    console.log(data)
     var lat2 = data[0].lat
     var lon2 = data[0].lon
     lat.pop(lat2)
     lat.push(lat2)
     lon.pop(lon2)
     lon.push(lon2)
-    console.log("success")
     return data
   })
   .then(function () {
@@ -41,7 +50,7 @@ fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit
     console.log(data);
     console.log(data.list[1].main.temp)
     document.getElementById("currentWeather").innerHTML = data.list[0].main.temp
-    document.getElementById("currentCity").innerHTML = search.value + " " + new Date().getMonth() + "/" + new Date().getDay() + "/" + new Date().getFullYear()
+    document.getElementById("currentCity").innerHTML = search.value + " " + currentMonth + "/" + new Date().getDate() + "/" + new Date().getFullYear()
 
     function removeAllChildNodes(parent) {
       while (parent.firstChild) {
@@ -83,11 +92,15 @@ function functions(){
 function test2(){
     console.log(search.value)
     console.log(coorUrl)
-    console.log(lat)
+    console.log("&#9925")
     console.log(lon)
     console.log(localSaveCities)
     console.log(retreiveFromLocal)
 }
+document.getElementById("test2").innerHTML="&#9925"
+//&#x1F9CA
+//U+2600
+console.log(new Date().getMonth()+1)
 test3()
 document.getElementById("searchBtn").addEventListener("click", functions)
 document.getElementById("test2").addEventListener("click", test2)
