@@ -1,6 +1,8 @@
 var key = "4010f19181a054df4e43fad094631122"
 var lat = []
 var lon = []
+var localSaveCities=[]
+var retreiveFromLocal = JSON.parse(localStorage.getItem("cities"))
 var savedCity = document.querySelector(".savedCity")
 var savedCities = document.querySelector("#savedCities")
 var search = document.querySelector("#search")
@@ -63,12 +65,14 @@ function saveCity(){
     savingCity.innerHTML = search.value
     savingCity.classList.add("savedCity")
     savingCity.addEventListener("click", previousCity)
+    localSaveCities.push(search.value)
+    console.log(localSaveCities)
+    localStorage.setItem("cities", JSON.stringify(localSaveCities))
     savedCities.appendChild(savingCity)
  }
 
  function previousCity(){
   search.value=this.innerHTML
-  console.log(search.value)
   test3()
  }
 
@@ -81,6 +85,9 @@ function test2(){
     console.log(coorUrl)
     console.log(lat)
     console.log(lon)
+    console.log(localSaveCities)
+    console.log(retreiveFromLocal)
 }
 test3()
 document.getElementById("searchBtn").addEventListener("click", functions)
+document.getElementById("test2").addEventListener("click", test2)
