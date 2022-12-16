@@ -1,0 +1,50 @@
+main{
+    display: inline-flex;
+}
+header{
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 15px;
+    background-color: rgb(0, 0, 190);
+    color: whitesmoke;
+    font-size: 40px;
+    text-align: center;
+    box-shadow: -70px 0px 30px white inset;
+}
+
+.savedCity{
+    cursor: pointer;
+}
+#searchArea{
+    margin: 20px;
+    border: 1px solid red;
+}
+
+#weatherDisplay{
+    color: blue;
+}
+
+#searchBtn{
+    display: inline;
+    cursor: pointer;
+}
+
+#seacrh{
+    display: inline;
+}
+
+#currentCity{
+    padding: 20px
+}
+
+.individualForecast{
+    color: aqua;
+    display: inline-block;
+    border: 4px solid black;
+    border-radius: 25px;
+    padding: 5px;
+    line-height: 50px;
+    background-color: gray;
+    margin: 5px;
+    justify-content: center;
+}
