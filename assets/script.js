@@ -13,7 +13,7 @@ var coorUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + search.value +
 var dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 var currentMonth = new Date().getMonth()+1
 
-//starting search
+//starting search 
 search.value = "Denver"
 
 //pulling from the local save to populate the previous search area
