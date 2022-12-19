@@ -47,7 +47,7 @@ fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limi
     return data
   })
   .then(function () {
-    fetch("https:api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=6&appid=" + key)
+    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=6&appid=" + key)
     .then(function (response) {
         if (response.status === 400) {
         console.log("FETCH ERROR: " + response.status);}
