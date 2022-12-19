@@ -29,7 +29,7 @@ for(i=0; i<retreiveFromLocal.length; i++){
 
 //fetching the city name and extracting the coordinates then plugging them into the weather API
 function getWeather(){
-fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=" + key)
+fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=" + key)
   .then(function (response) {
     if (response.status === 400) {
     clearInput(search)
