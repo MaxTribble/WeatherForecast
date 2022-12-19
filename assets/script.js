@@ -1,4 +1,4 @@
-// var key = "4010f19181a054df4e43fad094631122"
+var key = "4010f19181a054df4e43fad094631122"
 var lat = []
 var lon = []
 var localSaveCities=[]
