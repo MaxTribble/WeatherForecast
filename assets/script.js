@@ -6,8 +6,8 @@ var retreiveFromLocal = JSON.parse(localStorage.getItem("cities"))
 var savedCity = document.querySelector(".savedCity")
 var savedCities = document.querySelector("#savedCities")
 var search = document.querySelector("#search")
-// var requestUrl = "https:api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=5&appid=" + key;
-// var coorUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=" + key
+var requestUrl = "https:api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=5&appid=" + key;
+var coorUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=" + key
 
 //added the days of the week twice so the new date().getDay()+"i" can always find the right day
 var dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -47,7 +47,7 @@ fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit
     return data
   })
   .then(function () {
-    fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=6&appid=" + key)
+    fetch("https:api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=6&appid=" + key)
     .then(function (response) {
         if (response.status === 400) {
         console.log("FETCH ERROR: " + response.status);}
