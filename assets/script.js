@@ -29,7 +29,7 @@ for(i=0; i<retreiveFromLocal.length; i++){
 
 //fetching the city name and extracting the coordinates then plugging them into the weather API
 function getWeather(){
-fetch("HTTP://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=222d549b22221eaffb34b0ad3487e6d0")
+fetch("HTTPS://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=222d549b22221eaffb34b0ad3487e6d0")
   .then(function (response) {
     if (response.status === 400) {
     clearInput(search)
@@ -87,7 +87,7 @@ fetch("HTTP://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit
 };
 
 //calling the function to populate the page with Denver apon open
-getWeather()
+// getWeather()
 // saving the city to both the page, and locaal storage
 function saveCity(){
     savingCity = document.createElement("li")
