@@ -32,8 +32,6 @@ function getWeather(){
 fetch("HTTPS://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limit=1&appid=222d549b22221eaffb34b0ad3487e6d0")
   .then(function (response) {
     if (response.status === 400) {
-    clearInput(search)
-    search.setAttribute("placeholder", "enter valid city")
     console.log("FETCH ERROR: " + response.status)}
     return response.json();
   })
@@ -47,7 +45,7 @@ fetch("HTTPS://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limi
     return data
   })
   .then(function () {
-    fetch("https:api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=6&appid=222d549b22221eaffb34b0ad3487e6d0")
+    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat[0] + "&lon=" + lon[0] + "&units=imperial&cnt=6&appid=222d549b22221eaffb34b0ad3487e6d0")
     .then(function (response) {
         if (response.status === 400) {
         console.log("FETCH ERROR: " + response.status);}
