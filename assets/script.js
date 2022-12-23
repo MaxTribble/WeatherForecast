@@ -85,7 +85,8 @@ fetch("HTTPS://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&limi
 };
 
 //calling the function to populate the page with Denver apon open
-// getWeather()
+getWeather()
+
 // saving the city to both the page, and locaal storage
 function saveCity(){
     savingCity = document.createElement("li")
